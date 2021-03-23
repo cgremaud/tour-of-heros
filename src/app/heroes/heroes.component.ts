@@ -15,7 +15,8 @@ export class HeroesComponent implements OnInit {
   //this line instantiates a private instance of heroservice when it initializes a HeroesComponent.  
   constructor(private heroService: HeroService) { }
 
-  ngOnInit() { //this calls the getHeroes method when the HeroesComponent is init'd
+  ngOnInit() { 
+    //this calls the getHeroes method when the HeroesComponent is init'd
     this.getHeroes()
   }
 
@@ -25,9 +26,9 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    //this won't work asynchronously. 
-    this.heroes = this.heroService.getHeroes();
-    //probably just need to make this an async function that awaits this.heroService.getHeroes() which fetches from a server
+    //.subscribe seems to work a lot like .then() but it's happening in here instead of in the same scope as the fetch/http request
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    
   }
 
 }
