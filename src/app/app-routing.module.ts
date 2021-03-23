@@ -6,8 +6,12 @@ import { HeroesComponent } from './heroes/heroes.component';
 //this configures routes. Routes tell the router which VIEW to display when user clicks or goes to URL. 
 //routes is an array of objects that each have a path and a component. The path is a string in the URL, the component is what gets 
 //navigated to when that url is entered/clicked. So localhost:4200/heroes shows the heroescomponent?
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 const routes: Routes = [
-  { path: 'heroes', component: HeroesComponent }
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'heroes', component: HeroesComponent },
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
