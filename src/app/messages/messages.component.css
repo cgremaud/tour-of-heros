@@ -1,0 +1,11 @@
+.messages {
+    color: #333;
+    text-decoration: none;
+    background-color: #EEE;
+    margin: auto;
+    float: left;
+    padding: 20px;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+  }

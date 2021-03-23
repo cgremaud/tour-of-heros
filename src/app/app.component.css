@@ -30,6 +30,7 @@ nav a.active {
 .col-3 {
   float: left;
   display: flexbox;
+  width: 30%;
 }
 
 .col-4 {
