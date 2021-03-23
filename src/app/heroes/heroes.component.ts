@@ -8,7 +8,7 @@ import { HEROES } from '../mock-heroes'
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-
+  //this line says "we have an optional selectedHero property that's type Hero"
   selectedHero?: Hero;
 
   heroes = HEROES;
@@ -19,6 +19,7 @@ export class HeroesComponent implements OnInit {
   }
 
   onSelect(hero: Hero): void {
+    //this function is called when you click on the li element and takes the hero of the li element and sets it equal to selectedHero
     this.selectedHero = hero;
   }
 }
