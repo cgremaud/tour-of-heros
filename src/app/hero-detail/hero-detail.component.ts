@@ -14,7 +14,8 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent implements OnInit {
   //the @Input calls the Input module to get the value for hero. ? makes it optional. It's of type Hero
-  @Input() hero?: Hero;
+  //@Input() 
+  hero?: Hero;
 
   //ActivatedRoute holds the info about what route created this instance of HeroDetail (instance is created every time URL is called?). HeroService gets data from server (mock-heroes atm) and this component will use it to fetch the hero by id from the ActivatedRoute. location interacts with browser. Will use it for navigating back to where you came from. 
   constructor(
@@ -32,6 +33,10 @@ export class HeroDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
