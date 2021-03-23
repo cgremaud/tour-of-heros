@@ -8,6 +8,7 @@ import { MessageService } from '../message.service';
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
+
 export class HeroesComponent implements OnInit {
   //this line says "we have an optional selectedHero property that's type Hero"
   selectedHero?: Hero;
@@ -18,7 +19,7 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() { 
     //this calls the getHeroes method when the HeroesComponent is init'd
-    this.getHeroes()
+    this.getHeroes();
   }
 
   // onSelect(hero: Hero): void {
