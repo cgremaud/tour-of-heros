@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero'
-import { HEROES } from '../mock-heroes'
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -11,15 +11,23 @@ export class HeroesComponent implements OnInit {
   //this line says "we have an optional selectedHero property that's type Hero"
   selectedHero?: Hero;
 
-  heroes = HEROES;
+  heroes: Hero[] = [];
+  //this line instantiates a private instance of heroservice when it initializes a HeroesComponent.  
+  constructor(private heroService: HeroService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() { //this calls the getHeroes method when the HeroesComponent is init'd
+    this.getHeroes()
   }
 
   onSelect(hero: Hero): void {
     //this function is called when you click on the li element and takes the hero of the li element and sets it equal to selectedHero
     this.selectedHero = hero;
   }
+
+  getHeroes(): void {
+    //this won't work asynchronously. 
+    this.heroes = this.heroService.getHeroes();
+    //probably just need to make this an async function that awaits this.heroService.getHeroes() which fetches from a server
+  }
+
 }
