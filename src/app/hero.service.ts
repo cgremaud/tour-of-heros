@@ -13,6 +13,7 @@ export class HeroService {
 
   getHeroes(): Observable<Hero[]> {
     //observables are like promises? I think? of(HEROES) returns an Observable array of heroes (Observable<Hero[]>), that EMITS a single value, the array of HEROES
+    this.messageService.clear()
     const heroes = of(HEROES);
     this.messageService.add('HeroService: fetched heroes')
     return heroes;

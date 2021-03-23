@@ -21,12 +21,12 @@ export class HeroesComponent implements OnInit {
     this.getHeroes()
   }
 
-  onSelect(hero: Hero): void {
-    //this function is called when you click on the li element and takes the hero of the li element and sets it equal to selectedHero
-    this.messageService.clear();
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id = ${hero.id}`);
-  }
+  // onSelect(hero: Hero): void {
+  //   //this function is called when you click on the li element and takes the hero of the li element and sets it equal to selectedHero
+  //   this.messageService.clear();
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`HeroesComponent: Selected hero id = ${hero.id}`);
+  // }
 
   getHeroes(): void {
     //.subscribe seems to work a lot like .then() but it's happening in here instead of in the same scope as the fetch/http request

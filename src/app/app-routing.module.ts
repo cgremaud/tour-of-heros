@@ -7,11 +7,14 @@ import { HeroesComponent } from './heroes/heroes.component';
 //routes is an array of objects that each have a path and a component. The path is a string in the URL, the component is what gets 
 //navigated to when that url is entered/clicked. So localhost:4200/heroes shows the heroescomponent?
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'heroes', component: HeroesComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  //so the /:id tells it to 
+  { path: 'detail/:id', component: HeroDetailComponent }
 ];
 
 @NgModule({
