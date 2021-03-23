@@ -5,7 +5,7 @@ h2 {
   }
   
   .heroes-menu {
-    padding: 0;
+    padding: 20px;
     margin: auto;
     max-width: 1000px;
   
@@ -20,7 +20,7 @@ h2 {
   
   a {
     background-color: #3f525c;
-    border-radius: 2px;
+    border-radius: 4px;
     padding: 1rem;
     font-size: 1.2rem;
     text-decoration: none;

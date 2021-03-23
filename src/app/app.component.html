@@ -1,8 +1,19 @@
 <h1>{{title}}</h1>
-<nav>
-    <!--This works just like a normal link, but it has the routerLink attribute instead of href. and it has to be inside the <nav> tag-->
-    <a routerLink="/dashboard">Dashboard</a> &nbsp;
-    <a routerLink="/heroes">Heroes</a>
-  </nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<div class = "container">
+  <div class = "row">
+    
+      <nav>
+          <!--This works just like a normal link, but it has the routerLink attribute instead of href. and it has to be inside the <nav> tag-->
+          <a routerLink="/dashboard">Dashboard</a> &nbsp;
+          <a routerLink="/heroes">Heroes</a>
+        </nav>
+        <br />
+        <hr>
+      <div class = "col-4">
+        <router-outlet></router-outlet>
+      </div>
+      <div class = "col-3">
+        <app-messages></app-messages>
+      </div>
+    </div>
+  </div>
