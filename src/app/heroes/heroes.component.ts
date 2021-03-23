@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero'
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -13,7 +14,7 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[] = [];
   //this line instantiates a private instance of heroservice when it initializes a HeroesComponent.  
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private messageService: MessageService) { }
 
   ngOnInit() { 
     //this calls the getHeroes method when the HeroesComponent is init'd
@@ -22,7 +23,9 @@ export class HeroesComponent implements OnInit {
 
   onSelect(hero: Hero): void {
     //this function is called when you click on the li element and takes the hero of the li element and sets it equal to selectedHero
+    this.messageService.clear();
     this.selectedHero = hero;
+    this.messageService.add(`HeroesComponent: Selected hero id = ${hero.id}`);
   }
 
   getHeroes(): void {
