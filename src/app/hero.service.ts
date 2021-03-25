@@ -16,15 +16,15 @@ export class HeroService {
     private http: HttpClient) { }
 
 /** GET heroes from the server */
-getHeroes(): Observable<Hero[]> {
-  this.messageService.clear()
-  return this.http.get<Hero[]>(this.heroesUrl)
-    .pipe(
-      tap(_ => this.log('fetched heroes')),
-      catchError(this.handleError<Hero[]>('getHeroes', []))
-    );
-}
-  
+  getHeroes(): Observable<Hero[]> {
+    this.messageService.clear()
+    return this.http.get<Hero[]>(this.heroesUrl)
+      .pipe(
+        tap(_ => this.log('fetched heroes')),
+        catchError(this.handleError<Hero[]>('getHeroes', []))
+      );
+  }
+  //not sure exactly how this one is working. 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
   
@@ -47,7 +47,7 @@ getHeroes(): Observable<Hero[]> {
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
   }
-  
+  //sets the http header for the put request. 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
